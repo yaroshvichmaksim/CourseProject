@@ -1,0 +1,29 @@
+<h1>Новое мероприятие</h1>
+  <div class="col-xs-10">
+    <div class="form-group">
+      <label>Название мероприятия(Для внутреннего пользования)</label>
+      <input type="text" class="form-control" [(ngModel)]="event.official_Name"  [ngModelOptions]="{standalone: true}" required/><br />
+      <label>Название мероприятия(Оффициальное мероприятие)</label>
+      <input type="text" class="form-control" [(ngModel)]="event.internal_Name" [ngModelOptions]="{standalone: true}" required/><br />
+      <div>
+      <label>Место</label>
+       <app-google-map></app-google-map>
+      <input type="text" class="form-control" [(ngModel)]="event.place" [ngModelOptions]="{standalone: true}" required/><br />
+      <label>Страна</label>
+      <input type="text" class="form-control" [(ngModel)]="event.country" [ngModelOptions]="{standalone: true}" required/><br />
+      <label>Аддресс</label>
+      <input type="text" class="form-control" [(ngModel)]="event.address" [ngModelOptions]="{standalone: true}" required/><br />
+      <label>Почтовый Индекс</label>
+      <input type="text" class="form-control" [(ngModel)]="event.postCode" [ngModelOptions]="{standalone: true}" required/><br />
+      <label>Город</label>
+      <input type="text" class="form-control" [(ngModel)]="event.city" [ngModelOptions]="{standalone: true}" required/><br />
+        </div>
+      <label>Дата проведения</label>
+      <input type="text" class="form-control" [(ngModel)]="event.date_Of_the" [ngModelOptions]="{standalone: true}" required/><br />
+      <label>Время начала</label>
+      <input type="text" class="form-control" [(ngModel)]="event.start_Of_event" [ngModelOptions]="{standalone: true}" required/><br />
+      <label>Конец конца</label>
+      <input type="text" class="form-control" [(ngModel)]="event.end_Of_event" [ngModelOptions]="{standalone: true}" required/><br />
+      <input type="button" value="Добавить" (click)="add()"/>
+    </div>
+  </div>

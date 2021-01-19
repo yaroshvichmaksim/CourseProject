@@ -1,0 +1,47 @@
+<header>
+  <nav style="z-index:5" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+      <a class="navbar-brand ml-0" [routerLink]="['/']">Euro-Events</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse"
+           [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/available-events']" *ngIf="isLoggedIn">Доступные мероприятия</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/new-event']" *ngIf="isLoggedIn">Новое мероприятие</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <button class="btn btn-outline-dark my-0 my-sm-0 mr-sm-2  ml-5" type="submit" [routerLink]="['/login']" *ngIf="!isLoggedIn">Войти</button>
+
+          <button class="btn btn-outline-dark my-0 my-sm-0 mr-sm-0" type="submit" [routerLink]="['/registration']" *ngIf="!isLoggedIn">Регистрация</button>
+
+          <button class="btn btn-outline-dark my-0 my-sm-0" type="submit" (click)="authService.logout()" *ngIf="isLoggedIn">Выйти</button>
+        </span>
+      </div>
+    </div>
+  </nav>
+  <!--<nav style="z-index:4" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom mb-5 bg-dark navEvent fixed-top mt-5">
+    <div class="container">
+      <ul class="navbar-nav mr-auto pt-3">
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+          <a class="nav-link text-white" [routerLink]="['/available-events']" *ngIf="isLoggedIn">Подробнее о мероприятии</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+          <a class="nav-link text-white" [routerLink]="['/new-event']" *ngIf="isLoggedIn">Списки гостей</a>
+        </li>
+      </ul>
+    </div>
+  </nav>-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</header>
